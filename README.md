@@ -1,1 +1,0 @@
-# newbie13xd.github.io
