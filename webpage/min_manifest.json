@@ -1,0 +1,9 @@
+{
+  "name": "Barbapappa",
+  "short_name": "Barbapappa",
+  "icons": [{
+    "src": "hi_def.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
