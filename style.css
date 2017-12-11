@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
+/* @media */
+
 body {
     
     background: #B2F526;
@@ -24,6 +26,12 @@ footer {
     border-radius: 2%;
     
     text-align: center;
+    
+}
+
+button {
+    
+    cursor: pointer;
     
 }
 
@@ -59,6 +67,12 @@ footer {
     width: 55%;
     
     background-color: #00FFFF;
+    
+}
+
+.barbaImg {
+    
+   height: 180px; 
     
 }
 

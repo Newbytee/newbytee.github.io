@@ -15,3 +15,21 @@ function meme() {
     document.getElementById("text1").innerHTML = "Shrek";
     
 }
+
+function hide() {
+  
+    var isVisible = document.getElementById("defaultPage");
+    
+    if (isVisible.style.display === "none") {
+      
+      isVisible.style.display = "block";
+      document.getElementById("toggleButton").innerHTML = "frick off";
+      
+    } else {
+      
+      isVisible.style.display = "none";
+      document.getElementById("toggleButton").innerHTML = "frick on";
+      
+    }
+  
+}
