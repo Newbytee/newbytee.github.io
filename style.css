@@ -1,6 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
-/* @media */
+@media screen and (orientation: landscape) {
+    
+    #mainPage {
+        
+        width: 65%;
+        
+    }
+    
+}
+
+@media screen and (orientation: portrait) {
+    
+    #mainPage {
+        
+        width: 100%;
+        
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+    
+    #mainPage {
+        
+        width: 100%;
+        
+    }
+    
+}
 
 body {
     
@@ -35,6 +63,12 @@ button {
     
 }
 
+h1 {
+    
+    display: none;
+    
+}
+
 .headImg {
     
     width: 80%;
@@ -48,14 +82,15 @@ button {
     justify-content: space-around;
     -webkit-justify-content: space-around;
     
-    height: 180px;
+    height: 200px;
     padding-bottom: 100px;
     
 }
 
 .imgBox {
     
-    width: 35%;
+    border-radius: 5px;
+    width: 200px;
     min-width: 180px;
 
     background-color: #FF00FF;
@@ -64,6 +99,8 @@ button {
 
 .textBox {
     
+    border-radius: 5px;
+    padding: 10px;
     width: 55%;
     
     background-color: #00FFFF;
@@ -72,7 +109,11 @@ button {
 
 .barbaImg {
     
-   height: 180px; 
+    display: block;
+    margin: 0 auto;
+    
+    margin-top: 10px;
+    height: 180px; 
     
 }
 
@@ -82,8 +123,7 @@ button {
     
     margin-top: 100px;
     margin-bottom: 1000px; 
-    width: 65%;
-    height: 1500px;
+    height: 2950px;
     border-radius: 1%;
     
     background: #A2EF00;

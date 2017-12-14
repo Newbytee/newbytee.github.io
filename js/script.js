@@ -19,15 +19,18 @@ function meme() {
 function hide() {
   
     var isVisible = document.getElementById("defaultPage");
+    var setHeight = document.getElementById("mainPage")
     
     if (isVisible.style.display === "none") {
       
       isVisible.style.display = "block";
+      setHeight.style.height = "2950px";
       document.getElementById("toggleButton").innerHTML = "frick off";
       
     } else {
       
       isVisible.style.display = "none";
+      setHeight.style.height = "280px";
       document.getElementById("toggleButton").innerHTML = "frick on";
       
     }
