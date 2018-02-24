@@ -1,5 +1,12 @@
 body {
 
-    background-color: aliceblue;
+    background-color: steelblue;
+
+}
+
+p {
+
+    text-align: center;
+    font-size: 100px;
 
 }
