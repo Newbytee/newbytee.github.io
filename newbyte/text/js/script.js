@@ -59,6 +59,6 @@ function clearFields() {
 
 }
 
-readTxtFile(currentLocation, 0);
+changeLocation(currentLocation);
 //clearFields();
 //readTxtFile("txt/bleh", 0);
