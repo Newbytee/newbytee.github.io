@@ -1,6 +1,6 @@
 var loadingText = document.getElementById("loading");
 var storyText = [ document.getElementById("storyText1"), document.getElementById("storyText2"), document.getElementById("storyText3") ];
-var inventory = [ "Flower" ];
+var inventory = [ "Flower", "Box" ];
 var currentLocation = "intro_0";
 var storyTextLength = storyText.length;
 var inventorySize = inventory.length;
@@ -17,7 +17,7 @@ function readTxtFile(path, field) {
 
     $.ajax({
 
-        url : "txt/" + path + ".html",
+        url : path,
         dataType: "text",
         success : function(data) {
 
@@ -31,7 +31,7 @@ function readTxtFile(path, field) {
 
 function changeLocation(locationName) {
 
-    currentLocation = locationName;
+    currentLocation  = "txt/" + locationName + ".html";
 
     readTxtFile(currentLocation, 0);
 
@@ -39,21 +39,35 @@ function changeLocation(locationName) {
 
 function displayInventory() {
 
+    clearFields(1);
+
+    var tmpInventory = "Your inventory contains:<br>";
+
     inventorySize = inventory.length;
 
     for (var i = 0; i < inventorySize; i++) {
 
-
+        tmpInventory += inventory[i] + "<br>";
 
     }
 
+    $(storyText[1]).html(tmpInventory);
+
 }
 
-function clearFields() {
+function clearFields(n) {
 
-    for (var i = 0; i < storyTextLength; i++) {
+    if (isNaN(n)) {
 
-        $(storyText[i].html(" "));
+        for (var i = 0; i < storyTextLength; i++) {
+
+            $(storyText[i]).html(" ");
+
+        }
+
+    } else {
+
+        $(storyText[n]).html(" ");
 
     }
 

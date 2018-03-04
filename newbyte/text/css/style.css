@@ -3,6 +3,7 @@
 body {
 
     background-color: aliceblue;
+    font-family: Karma, sans-serif;
 
 }
 
@@ -13,10 +14,15 @@ button {
 
 }
 
-h1, p {
+nav, h1, p {
 
     text-align: center;
-    font-family: Karma, sans-serif;
+
+}
+
+p {
+
+    padding-bottom: 50px;
 
 }
 
@@ -24,6 +30,16 @@ h1, p {
 
     margin: auto;
 
-    width: 60%;
+    width: 70%;
+
+}
+
+@media screen and (orientation: portrait) {
+
+    .storyText {
+
+        width: 95%;
+
+    }
 
 }
