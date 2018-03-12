@@ -2,6 +2,8 @@
 
   "name": "The Legend of the Twig",
   "short_name": "Legend of the Twig",
-  "display": "standalone"
+  "display": "standalone",
+
+  "background_color": "#f0f8ff"
 
 }
