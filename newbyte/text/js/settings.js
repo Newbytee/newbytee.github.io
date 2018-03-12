@@ -9,12 +9,12 @@ function switchTheme(theme) {
     if (theme === "dark") {
 
         sheetSwitchButton.setAttribute("onclick", "switchTheme('light')");
-        sheetSwitchButton.innerHTML = "Switch to light theme";
+        sheetSwitchButton.innerHTML = "Switch to light mode";
 
     } else {
 
         sheetSwitchButton.setAttribute("onclick", "switchTheme('dark')");
-        sheetSwitchButton.innerHTML = "Switch to dark theme";
+        sheetSwitchButton.innerHTML = "Switch to dark mode";
 
     }
 
