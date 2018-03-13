@@ -5,6 +5,14 @@
   "display": "standalone",
 
   "background_color": "#f0f8ff",
-  "theme_color": "#f0f8ff"
+  "theme_color": "#f0f8ff",
+
+  "icons": [{
+
+    "src": "icon/icon-hi.png",
+    "sizes": "1024x1024",
+    "type": "image/png"
+
+  }]
 
 }
