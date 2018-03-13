@@ -4,6 +4,7 @@
   "short_name": "Legend of the Twig",
   "display": "standalone",
 
-  "background_color": "#f0f8ff"
+  "background_color": "#f0f8ff",
+  "theme_color": "#f0f8ff"
 
 }
