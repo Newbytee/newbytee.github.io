@@ -20,6 +20,7 @@ if (localStorage.getItem("currentLocation") === undefined) {
 
 currentLocation = localStorage.getItem("currentLocation");
 console.log(currentLocation);
+alert(currentLocation);
 
 function storageAvailable(type) {
     try {
