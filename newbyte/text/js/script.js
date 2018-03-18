@@ -1,4 +1,8 @@
+if (!(storageAvailable('localStorage'))) {
 
+    alert("Warning: The local storage API is unavailable on your current device/browser, saving may not be available.");
+
+}
 
 var loadingText = document.getElementById("loading");
 var storyText = [ document.getElementById("storyText1"), document.getElementById("storyText2"), document.getElementById("storyText3") ];
