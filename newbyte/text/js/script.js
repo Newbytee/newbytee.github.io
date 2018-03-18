@@ -54,6 +54,7 @@ function readTxtFile(path, field) {
 
 function changeLocation(locationName) {
 
+    localStorage.setItem("currentLocation", locationName);
     currentLocation  = "txt/" + locationName + ".html";
 
     readTxtFile(currentLocation, 0);
