@@ -6,11 +6,11 @@ var currentLocation;
 var storyTextLength = storyText.length;
 var inventorySize = inventory.length;
 
-if (!(storageAvailable('localStorage'))) {
+/*if (!(storageAvailable('localStorage'))) {
 
     alert("Warning: The local storage API is unavailable on your current device/browser, saving may not be available.");
 
-}
+}*/
 
 if (localStorage.getItem("currentLocation") === undefined) {
 
