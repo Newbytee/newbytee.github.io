@@ -6,13 +6,13 @@ if (!(storageAvailable('localStorage'))) {
 
 }
 
-if (localStorage.getItem("currentLocation") === undefined) {
+if (localStorage.getItem("currentLocation") === null) {
 
     console.log("Storage registered");
 
     localStorage.setItem("currentLocation", "intro_0");
 
-} else if (localStorage.getItem("currentLocation") !== undefined) {
+} else if (localStorage.getItem("currentLocation") !== null) {
 
     console.log("Storage found");
 
