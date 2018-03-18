@@ -14,9 +14,13 @@ if (!(storageAvailable('localStorage'))) {
 
 if (localStorage.getItem("currentLocation")) {
 
+    console.log("Storage found");
+
     currentLocation = localStorage.getItem("currentLocation");
 
 } else {
+
+    console.log("Storage registered");
 
     localStorage.setItem("currentLocation", "intro_0");
 
