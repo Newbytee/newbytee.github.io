@@ -28,8 +28,6 @@ currentLocation = localStorage.getItem("currentLocation");
 
 console.log(currentLocation);
 
-localStorage.setItem("currentLocation", currentLocation);
-
 loadingText.parentNode.removeChild(loadingText);
 
 function readTxtFile(path, field) {
