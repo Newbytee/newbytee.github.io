@@ -105,4 +105,11 @@ function clearFields(n) {
 
 }
 
+function resetProgress() {
+
+    localStorage.removeItem('currentLocation');
+    location.reload();
+
+}
+
 changeLocation(currentLocation);
