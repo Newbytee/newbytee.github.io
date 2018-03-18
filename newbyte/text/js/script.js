@@ -1,7 +1,7 @@
 var loadingText = document.getElementById("loading");
 var storyText = [ document.getElementById("storyText1"), document.getElementById("storyText2"), document.getElementById("storyText3") ];
 var inventory = [];
-var currentLocation = "intro_0";
+var currentLocation;
 var visitedLocations = [];
 var storyTextLength = storyText.length;
 var inventorySize = inventory.length;
@@ -9,6 +9,16 @@ var inventorySize = inventory.length;
 if (!(storageAvailable('localStorage'))) {
 
     alert("Warning: The local storage API is unavailable on your current device/browser, saving may not be available.");
+
+}
+
+if (localStorage.getItem("currentLocation")) {
+
+    currentLocation = localStorage.getItem("currentLocation");
+
+} else {
+
+    localStorage.setItem("currentLocation", "intro_0");
 
 }
 
