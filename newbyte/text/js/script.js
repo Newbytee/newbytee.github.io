@@ -18,6 +18,8 @@ if (localStorage.getItem("currentLocation")) {
 
     currentLocation = localStorage.getItem("currentLocation");
 
+    console.log(currentLocation);
+
 } else {
 
     console.log("Storage registered");
