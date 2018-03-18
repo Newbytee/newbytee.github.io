@@ -2,7 +2,7 @@ var loadingText = document.getElementById("loading");
 var storyText = [ document.getElementById("storyText1"), document.getElementById("storyText2"), document.getElementById("storyText3") ];
 var inventory = [];
 var currentLocation;
-var visitedLocations = [];
+//var visitedLocations = [];
 var storyTextLength = storyText.length;
 var inventorySize = inventory.length;
 
