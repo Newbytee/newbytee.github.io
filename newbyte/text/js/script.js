@@ -1,9 +1,14 @@
+
+
 var loadingText = document.getElementById("loading");
 var storyText = [ document.getElementById("storyText1"), document.getElementById("storyText2"), document.getElementById("storyText3") ];
 var inventory = [];
 var currentLocation = "intro_0";
+var visitedLocations = [];
 var storyTextLength = storyText.length;
 var inventorySize = inventory.length;
+
+localStorage.setItem("currentLocation", currentLocation);
 
 loadingText.parentNode.removeChild(loadingText);
 
