@@ -1,4 +1,5 @@
 var currentLocation;
+var array = [];
 
 if (!(storageAvailable('localStorage'))) {
 
@@ -8,9 +9,12 @@ if (!(storageAvailable('localStorage'))) {
 
 if (localStorage.getItem("currentLocation") === null) {
 
+    array = [ "Bep", "blep", "nep" ];
+
     console.log("Storage registered");
 
     localStorage.setItem("currentLocation", "intro_0");
+    localStorage.setItem("array", JSON.stringify(array));
 
 } else if (localStorage.getItem("currentLocation") !== null) {
 
@@ -18,8 +22,10 @@ if (localStorage.getItem("currentLocation") === null) {
 
 }
 
+array = JSON.parse(localStorage.getItem("array"));
 currentLocation = localStorage.getItem("currentLocation");
 console.log(currentLocation);
+console.log(array[1]);
 alert(currentLocation);
 
 function storageAvailable(type) {
