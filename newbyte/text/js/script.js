@@ -6,19 +6,19 @@ var currentLocation;
 var storyTextLength = storyText.length;
 var inventorySize = inventory.length;
 
-/*if (!(storageAvailable('localStorage'))) {
+if (!(storageAvailable('localStorage'))) {
 
     alert("Warning: The local storage API is unavailable on your current device/browser, saving may not be available.");
 
-}*/
+}
 
-if (localStorage.getItem("currentLocation") === undefined) {
+if (localStorage.getItem("currentLocation") === null) {
 
     console.log("Storage registered");
 
     localStorage.setItem("currentLocation", "intro_0");
 
-} else {
+} else if (localStorage.getItem("currentLocation") !== null) {
 
     console.log("Storage found");
 
