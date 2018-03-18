@@ -1,6 +1,6 @@
 var loadingText = document.getElementById("loading");
 var storyText = [ document.getElementById("storyText1"), document.getElementById("storyText2"), document.getElementById("storyText3") ];
-var inventory = [ "Flower", "Box" ];
+var inventory = [];
 var currentLocation = "intro_0";
 var storyTextLength = storyText.length;
 var inventorySize = inventory.length;
@@ -39,11 +39,19 @@ function changeLocation(locationName) {
 
 function displayInventory() {
 
-    clearFields(1);
+    inventorySize = inventory.length;
+
+    clearFields(2);
+
+    if (inventorySize === 0) {
+
+        $(storyText[2]).html("Your inventory is empty");
+
+        return;
+
+    }
 
     var tmpInventory = "Your inventory contains:<br>";
-
-    inventorySize = inventory.length;
 
     for (var i = 0; i < inventorySize; i++) {
 
@@ -51,7 +59,7 @@ function displayInventory() {
 
     }
 
-    $(storyText[1]).html(tmpInventory);
+    $(storyText[2]).html(tmpInventory);
 
 }
 
