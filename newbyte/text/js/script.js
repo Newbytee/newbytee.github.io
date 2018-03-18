@@ -11,7 +11,7 @@ function readTxtFile(path, field) {
 
     if (field === undefined) {
 
-        field = 0;
+        field = 1;
 
     }
 
@@ -82,5 +82,3 @@ function clearFields(n) {
 }
 
 changeLocation(currentLocation);
-//clearFields();
-//readTxtFile("txt/bleh", 0);
