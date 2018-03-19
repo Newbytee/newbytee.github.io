@@ -22,10 +22,13 @@ if (localStorage.getItem("currentLocation") === null) {
 
 }
 
-array = JSON.parse(localStorage.getItem("array"));
+var array2 = JSON.parse(localStorage.getItem("array"));
 currentLocation = localStorage.getItem("currentLocation");
 console.log(currentLocation);
-console.log(array[1]);
+console.log(typeof array2);
+console.log(JSON.parse(localStorage.getItem("array")));
+console.log(localStorage.getItem("array"));
+console.log(array2[1]);
 alert(currentLocation);
 
 function storageAvailable(type) {
