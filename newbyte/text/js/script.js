@@ -23,8 +23,6 @@ inventory = JSON.parse(localStorage.getItem("inventory"));
 
 console.log(currentLocation);
 
-
-
 loadingText.parentNode.removeChild(loadingText);
 
 //switchTheme(localStorage.getItem("theme"));
