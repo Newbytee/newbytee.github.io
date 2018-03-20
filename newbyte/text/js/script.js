@@ -2,13 +2,13 @@ var loadingText = document.getElementById("loading");
 var storyText = [ document.getElementById("storyText1"), document.getElementById("storyText2"), document.getElementById("storyText3") ];
 var inventory = [];
 var currentLocation;
-//var visitedLocations = [];
+var visitedLocations = [];
 var storyTextLength = storyText.length;
 var inventorySize = inventory.length;
 
 if (!(storageAvailable('localStorage'))) {
 
-    alert("Warning: The local storage API is unavailable on your current device/browser, saving may not be available.");
+    alert("Warning: The local storage API seems to be unavailable on your current device/browser, saving may not be available.");
 
 }
 
@@ -55,6 +55,7 @@ function readTxtFile(path, field) {
 function changeLocation(locationName) {
 
     localStorage.setItem("currentLocation", locationName);
+    visitedLocations.push(locationName);
     currentLocation  = "txt/" + locationName + ".html";
 
     readTxtFile(currentLocation, 0);
@@ -85,6 +86,13 @@ function displayInventory() {
 
     $(storyText[2]).html(tmpInventory);
 
+}
+
+function addToInventory(item) {
+    
+    inventory.push(item);
+    localStorage.setItem("inventory", JSON.stringify(inventory));
+    
 }
 
 function clearFields(n) {
