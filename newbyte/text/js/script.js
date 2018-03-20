@@ -127,4 +127,5 @@ function resetProgress() {
 
 loadingText.parentNode.removeChild(loadingText);
 
+switchTheme(localStorage.getItem("theme"));
 changeLocation(currentLocation);
