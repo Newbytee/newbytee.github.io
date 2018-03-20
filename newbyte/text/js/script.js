@@ -18,6 +18,7 @@ if (localStorage.getItem("currentLocation") === null) {
 
     localStorage.setItem("currentLocation", "intro_0");
     localStorage.setItem("inventory", JSON.stringify(inventory));
+    localStorage.setItem("theme", "light");
 
 } else if (localStorage.getItem("currentLocation") !== null) {
 
@@ -127,5 +128,5 @@ function resetProgress() {
 
 loadingText.parentNode.removeChild(loadingText);
 
-//switchTheme(localStorage.getItem("theme"));
+switchTheme(localStorage.getItem("theme"));
 changeLocation(currentLocation);
