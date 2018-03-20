@@ -17,6 +17,7 @@ if (localStorage.getItem("currentLocation") === null) {
     console.log("Storage registered");
 
     localStorage.setItem("currentLocation", "intro_0");
+    localStorage.setItem("inventory", JSON.stringify(inventory));
 
 } else if (localStorage.getItem("currentLocation") !== null) {
 
@@ -25,10 +26,9 @@ if (localStorage.getItem("currentLocation") === null) {
 }
 
 currentLocation = localStorage.getItem("currentLocation");
+inventory = JSON.parse(localStorage.getItem("inventory"));
 
 console.log(currentLocation);
-
-loadingText.parentNode.removeChild(loadingText);
 
 function readTxtFile(path, field) {
 
@@ -107,9 +107,16 @@ function clearFields(n) {
 
 function resetProgress() {
 
-    localStorage.removeItem('currentLocation');
-    location.reload();
-
+    if (confirm("Are you sure? This will reset all your progress")) {
+        
+        localStorage.removeItem("currentLocation");
+        localStorage.removeItem("inventory");
+        location.reload();
+        
+    }
+    
 }
+
+loadingText.parentNode.removeChild(loadingText);
 
 changeLocation(currentLocation);
