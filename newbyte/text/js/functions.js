@@ -66,8 +66,8 @@ function changeLocation(locationName) {
 
     });
 
-    localStorage.setItem("currentLocation", locationName);
     visitedLocations.push(locationName);
+    localStorage.setItem("currentLocation", locationName);
 
 }
 
