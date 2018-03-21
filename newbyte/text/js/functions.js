@@ -1,14 +1,14 @@
 "use strict";
 
-var currentSheet = document.getElementById("pageTheme");
-var loadingText = document.getElementById("loading");
-var storyText = [ document.getElementById("storyText1"), document.getElementById("storyText2"), document.getElementById("storyText3") ];
-var inventory = [];
-var currentLocation;
-var visitedLocations = [];
-var storyTextLength = storyText.length;
-var inventorySize = inventory.length;
-var currentTheme;
+let currentSheet = document.getElementById("pageTheme");
+let loadingText = document.getElementById("loading");
+let storyText = [ document.getElementById("storyText1"), document.getElementById("storyText2"), document.getElementById("storyText3") ];
+let inventory = [];
+let currentLocation;
+let visitedLocations = [];
+let storyTextLength = storyText.length;
+let inventorySize = inventory.length;
+let currentTheme;
 
 function readTxtFile(path, field) {
 
@@ -38,7 +38,19 @@ function changeLocation(locationName) {
     visitedLocations.push(locationName);
     currentLocation  = "txt/" + locationName + ".html";
 
-    readTxtFile(currentLocation, 0);
+    $.ajax({
+
+        url : currentLocation,
+        dataType: "text",
+        success : function(data) {
+
+            let parsedData = data.split("@");
+
+            $(storyText[0]).html(parsedData[0]);
+
+        }
+
+    });
 
 }
 
@@ -56,9 +68,9 @@ function displayInventory() {
 
     }
 
-    var tmpInventory = "Your inventory contains:<br>";
+    let tmpInventory = "Your inventory contains:<br>";
 
-    for (var i = 0; i < inventorySize; i++) {
+    for (let i = 0; i < inventorySize; i++) {
 
         tmpInventory += inventory[i] + "<br>";
 
@@ -79,7 +91,7 @@ function clearFields(n) {
 
     if (isNaN(n)) {
 
-        for (var i = 0; i < storyTextLength; i++) {
+        for (let i = 0; i < storyTextLength; i++) {
 
             $(storyText[i]).html(" ");
 
@@ -108,7 +120,7 @@ function resetProgress() {
 
 function switchTheme(theme) {
 
-    var sheetSwitchButton = document.getElementById("themeSwitchButton");
+    let sheetSwitchButton = document.getElementById("themeSwitchButton");
 
     try {
 
@@ -142,13 +154,13 @@ function displaySettings() {
 
     readTxtFile('menu/settings.html', 2);
 
-    var sheetSwitchButton = document.getElementById("themeSwitchButton");
+    let sheetSwitchButton = document.getElementById("themeSwitchButton");
 
     if (currentTheme = localStorage.getItem("currentTheme") === "dark") {
 
+        console.log("hi");
         sheetSwitchButton.setAttribute("onclick", "switchTheme('light')");
         sheetSwitchButton.innerHTML = "Switch to light mode";
-
 
     } else {
 
