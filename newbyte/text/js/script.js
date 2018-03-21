@@ -19,12 +19,12 @@ if (localStorage.getItem("currentLocation") === null) {
 
 }
 
+switchTheme(localStorage.getItem("theme"));
+
 currentLocation = localStorage.getItem("currentLocation");
 inventory = JSON.parse(localStorage.getItem("inventory"));
 visitedLocations = JSON.parse(localStorage.getItem("visitedLocations"));
 
 console.log(currentLocation);
-
-//switchTheme(localStorage.getItem("theme"));
 loadingText.parentNode.removeChild(loadingText);
 changeLocation(currentLocation);
