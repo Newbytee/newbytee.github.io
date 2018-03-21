@@ -6,6 +6,7 @@ var currentLocation;
 var visitedLocations = [];
 var storyTextLength = storyText.length;
 var inventorySize = inventory.length;
+var currentTheme;
 
 function readTxtFile(path, field) {
 
@@ -105,21 +106,31 @@ function resetProgress() {
 
 function switchTheme(theme) {
 
-    var sheetSwitchButton = document.getElementById("themeSwitchButton");
+    try {
 
-    localStorage.setItem("theme", theme);
-    currentSheet.setAttribute("href", "css/" + theme + ".css");
+        var sheetSwitchButton = document.getElementById("themeSwitchButton");
 
-    if (theme === "dark") {
+        if (theme === "dark") {
 
-        sheetSwitchButton.setAttribute("onclick", "switchTheme('light')");
-        sheetSwitchButton.innerHTML = "Switch to light mode";
+            sheetSwitchButton.setAttribute("onclick", "switchTheme('light')");
+            sheetSwitchButton.innerHTML = "Switch to light mode";
 
 
-    } else {
+        } else {
 
-        sheetSwitchButton.setAttribute("onclick", "switchTheme('dark')");
-        sheetSwitchButton.innerHTML = "Switch to dark mode";
+            sheetSwitchButton.setAttribute("onclick", "switchTheme('dark')");
+            sheetSwitchButton.innerHTML = "Switch to dark mode";
+
+        }
+
+    } catch(e) {
+
+        console.log(e);
+
+    } finally {
+
+        localStorage.setItem("currentTheme", theme);
+        currentSheet.setAttribute("href", "css/" + theme + ".css");
 
     }
 
