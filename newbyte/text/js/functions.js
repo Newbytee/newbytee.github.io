@@ -34,9 +34,23 @@ function readTxtFile(path, field) {
 
 function changeLocation(locationName) {
 
-    localStorage.setItem("currentLocation", locationName);
-    visitedLocations.push(locationName);
     currentLocation  = "txt/" + locationName + ".html";
+
+    let visit;
+
+    if (visitedLocations.indexOf(locationName) === -1) {
+
+        visit = 0;
+
+        console.log("Location not visited");
+
+    } else {
+
+        visit = 1;
+
+        console.log("Location before visited");
+
+    }
 
     $.ajax({
 
@@ -46,11 +60,14 @@ function changeLocation(locationName) {
 
             let parsedData = data.split("@");
 
-            $(storyText[0]).html(parsedData[0]);
+            $(storyText[0]).html(parsedData[visit]);
 
         }
 
     });
+
+    localStorage.setItem("currentLocation", locationName);
+    visitedLocations.push(locationName);
 
 }
 
