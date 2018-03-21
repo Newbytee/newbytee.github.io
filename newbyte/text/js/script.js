@@ -10,6 +10,7 @@ if (localStorage.getItem("currentLocation") === null) {
 
     localStorage.setItem("currentLocation", "intro_0");
     localStorage.setItem("inventory", JSON.stringify(inventory));
+    localStorage.setItem("visitedLocations", JSON.stringify(visitedLocations));
     localStorage.setItem("theme", "light");
 
 } else if (localStorage.getItem("currentLocation") !== null) {
@@ -20,10 +21,10 @@ if (localStorage.getItem("currentLocation") === null) {
 
 currentLocation = localStorage.getItem("currentLocation");
 inventory = JSON.parse(localStorage.getItem("inventory"));
+visitedLocations = JSON.parse(localStorage.getItem("visitedLocations"));
 
 console.log(currentLocation);
 
-loadingText.parentNode.removeChild(loadingText);
-
 //switchTheme(localStorage.getItem("theme"));
+loadingText.parentNode.removeChild(loadingText);
 changeLocation(currentLocation);

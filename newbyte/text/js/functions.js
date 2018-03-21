@@ -96,6 +96,7 @@ function resetProgress() {
 
         localStorage.removeItem("currentLocation");
         localStorage.removeItem("inventory");
+        localStorage.removeItem("visitedLocations");
         location.reload();
 
     }
