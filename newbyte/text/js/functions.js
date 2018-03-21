@@ -1,3 +1,5 @@
+"use strict";
+
 var currentSheet = document.getElementById("pageTheme");
 var loadingText = document.getElementById("loading");
 var storyText = [ document.getElementById("storyText1"), document.getElementById("storyText2"), document.getElementById("storyText3") ];
@@ -106,9 +108,9 @@ function resetProgress() {
 
 function switchTheme(theme) {
 
-    try {
+    var sheetSwitchButton = document.getElementById("themeSwitchButton");
 
-        var sheetSwitchButton = document.getElementById("themeSwitchButton");
+    try {
 
         if (theme === "dark") {
 
@@ -131,6 +133,27 @@ function switchTheme(theme) {
 
         localStorage.setItem("currentTheme", theme);
         currentSheet.setAttribute("href", "css/" + theme + ".css");
+
+    }
+
+}
+
+function displaySettings() {
+
+    readTxtFile('menu/settings.html', 2);
+
+    var sheetSwitchButton = document.getElementById("themeSwitchButton");
+
+    if (currentTheme = localStorage.getItem("currentTheme") === "dark") {
+
+        sheetSwitchButton.setAttribute("onclick", "switchTheme('light')");
+        sheetSwitchButton.innerHTML = "Switch to light mode";
+
+
+    } else {
+
+        sheetSwitchButton.setAttribute("onclick", "switchTheme('dark')");
+        sheetSwitchButton.innerHTML = "Switch to dark mode";
 
     }
 

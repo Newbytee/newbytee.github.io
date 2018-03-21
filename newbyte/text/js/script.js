@@ -1,3 +1,5 @@
+"use strict";
+
 if (!(storageAvailable('localStorage'))) {
 
     alert("Warning: The local storage API seems to be unavailable on your current device/browser, saving may not be available.");
@@ -22,11 +24,10 @@ if (localStorage.getItem("currentLocation") === null) {
 currentLocation = localStorage.getItem("currentLocation");
 inventory = JSON.parse(localStorage.getItem("inventory"));
 visitedLocations = JSON.parse(localStorage.getItem("visitedLocations"));
-currentTheme = localStorage.getItem("currentTheme");
 
 console.log(currentLocation);
 
 loadingText.parentNode.removeChild(loadingText);
 
-switchTheme(currentTheme);
+switchTheme(localStorage.getItem("currentTheme"));
 changeLocation(currentLocation);
