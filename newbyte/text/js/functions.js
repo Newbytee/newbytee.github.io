@@ -68,6 +68,7 @@ function changeLocation(locationName) {
 
     visitedLocations.push(locationName);
     localStorage.setItem("currentLocation", locationName);
+    localStorage.setItem("visitedLocations", JSON.stringify(visitedLocations));
 
 }
 
