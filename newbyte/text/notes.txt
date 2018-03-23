@@ -1,4 +1,6 @@
 @ is for splitting first visit and second visit
 
 TODO:
+
+DONE:
 -- fix saving of visited locations
