@@ -68,7 +68,6 @@ function changeLocation(locationName) {
     });
     
     visitedLocations.push(localStorage.getItem("lastLocation"));
-    localStorage.setItem("lastLocation", locationName);
 
     if (firstLoad === true) {
         
@@ -141,7 +140,6 @@ function resetProgress() {
         localStorage.removeItem("currentLocation");
         localStorage.removeItem("inventory");
         localStorage.removeItem("visitedLocations");
-        localStorage.removeItem("lastLocation")
         location.reload();
 
     }
@@ -182,7 +180,17 @@ function switchTheme(theme) {
 
 function displaySettings() {
 
-    readTxtFile('menu/settings.html', 2);
+    if (currentTheme = localStorage.getItem("currentTheme") === "dark") {
+
+        readTxtFile('menu/settingsDark.html', 2);
+
+    } else {
+
+        readTxtFile('menu/settings.html', 2);
+
+    }
+
+
 
     let sheetSwitchButton = document.getElementById("themeSwitchButton");
 
