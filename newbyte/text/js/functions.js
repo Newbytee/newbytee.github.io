@@ -67,15 +67,7 @@ function changeLocation(locationName) {
 
     });
     
-    try {
-        
-        visitedLocations.push(localStorage.getItem("lastLocation"));
-        
-    } catch (e) {
-        
-        console.log(e);
-        
-    }
+    visitedLocations.push(localStorage.getItem("lastLocation"));
     
     localStorage.setItem("lastLocation", locationName);
 
