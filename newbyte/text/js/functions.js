@@ -33,6 +33,18 @@ function readTxtFile(path, field) {
 }
 
 function changeLocation(locationName) {
+    
+    try {
+        
+        visitedLocations.push(localStorage.getItem("lastLocation"));
+        
+    } catch (e) {
+        
+        console.log(e);
+        
+    }
+    
+    localStorage.setItem("lastLocation", locationName);
 
     currentLocation  = contentPath + "/" + locationName + ".html";
 
@@ -65,8 +77,7 @@ function changeLocation(locationName) {
         }
 
     });
-
-    visitedLocations.push(locationName);
+    
     localStorage.setItem("currentLocation", locationName);
     localStorage.setItem("visitedLocations", JSON.stringify(visitedLocations));
 
@@ -130,6 +141,7 @@ function resetProgress() {
         localStorage.removeItem("currentLocation");
         localStorage.removeItem("inventory");
         localStorage.removeItem("visitedLocations");
+        localStorage.removeItem("lastLocation")
         location.reload();
 
     }
