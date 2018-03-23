@@ -68,7 +68,6 @@ function changeLocation(locationName) {
     });
     
     visitedLocations.push(localStorage.getItem("lastLocation"));
-    
     localStorage.setItem("lastLocation", locationName);
 
     if (firstLoad === true) {
@@ -79,9 +78,9 @@ function changeLocation(locationName) {
         
         localStorage.setItem("currentLocation", locationName);
         localStorage.setItem("visitedLocations", JSON.stringify(visitedLocations));
+        
     }
     
-
 }
 
 function displayInventory() {
