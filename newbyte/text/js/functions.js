@@ -141,6 +141,7 @@ function resetProgress() {
         localStorage.removeItem("currentLocation");
         localStorage.removeItem("inventory");
         localStorage.removeItem("visitedLocations");
+        localStorage.removeItem("lastLocation");
         location.reload();
 
     }
