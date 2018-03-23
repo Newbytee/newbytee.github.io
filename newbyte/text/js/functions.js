@@ -34,18 +34,7 @@ function readTxtFile(path, field) {
 
 function changeLocation(locationName) {
     
-    try {
-        
-        visitedLocations.push(localStorage.getItem("lastLocation"));
-        
-    } catch (e) {
-        
-        console.log(e);
-        
-    }
     
-    localStorage.setItem("lastLocation", locationName);
-
     currentLocation  = contentPath + "/" + locationName + ".html";
 
     let visit;
@@ -77,6 +66,19 @@ function changeLocation(locationName) {
         }
 
     });
+    
+    try {
+        
+        visitedLocations.push(localStorage.getItem("lastLocation"));
+        
+    } catch (e) {
+        
+        console.log(e);
+        
+    }
+    
+    localStorage.setItem("lastLocation", locationName);
+
     
     localStorage.setItem("currentLocation", locationName);
     localStorage.setItem("visitedLocations", JSON.stringify(visitedLocations));
