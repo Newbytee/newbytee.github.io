@@ -34,7 +34,7 @@ function readTxtFile(path, field) {
 
 function changeLocation(locationName) {
 
-    currentLocation  = "txt/" + locationName + ".html";
+    currentLocation  = contentPath + "/" + locationName + ".html";
 
     let visit;
 
