@@ -9,6 +9,7 @@ let visitedLocations = [];
 let storyTextLength = storyText.length;
 let inventorySize = inventory.length;
 let currentTheme;
+let firstLoad = true;
 
 function readTxtFile(path, field) {
 
@@ -78,9 +79,16 @@ function changeLocation(locationName) {
     
     localStorage.setItem("lastLocation", locationName);
 
+    if (firstLoad === true) {
+        
+        firstLoad = false;
+        
+    } else {
+        
+        localStorage.setItem("currentLocation", locationName);
+        localStorage.setItem("visitedLocations", JSON.stringify(visitedLocations));
+    }
     
-    localStorage.setItem("currentLocation", locationName);
-    localStorage.setItem("visitedLocations", JSON.stringify(visitedLocations));
 
 }
 
