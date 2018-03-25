@@ -34,6 +34,8 @@ function readTxtFile(path, field) {
 }
 
 function changeLocation(locationName) {
+
+    clearFields(2);
     
     currentLocation  = contentPath + "/" + locationName + ".html";
 
@@ -88,6 +90,22 @@ function changeLocation(locationName) {
     
 }
 
+function changeLocationMore(locationName, itemName, removeItem) {
+
+    if (removeItem) {
+
+        addToInventory(itemName, true);
+
+    } else {
+
+        addToInventory(itemName, false);
+
+    }
+
+    changeLocation(locationName);
+    
+}
+
 function displayInventory() {
 
     inventorySize = inventory.length;
@@ -114,9 +132,18 @@ function displayInventory() {
 
 }
 
-function addToInventory(item) {
+function addToInventory(item, removeItem) {
 
-    inventory.push(item);
+    if (removeItem) {
+
+        inventory.splice(inventory.indexOf(item), 1);
+
+    } else {
+
+        inventory.push(item);
+
+    }
+
     localStorage.setItem("inventory", JSON.stringify(inventory));
 
 }
