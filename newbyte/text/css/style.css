@@ -1,55 +1,36 @@
 body {
-
     background-color: aliceblue;
     font-family: Karma, sans-serif;
-
 }
 
 button {
-
     height: 25px;
     border-radius: 5px;
-
 }
 
 nav, h1, p {
-
     text-align: center;
-
 }
 
 nav {
-
     margin-bottom: 20px;
-
 }
 
 h1 {
-
     margin-top: 10px;
-
 }
 
 p {
-
     padding-bottom: 50px;
-
 }
 
 .storyText {
-
     margin: auto;
-
     width: 70%;
-
 }
 
 @media screen and (orientation: portrait) {
-
     .storyText {
-
         width: 95%;
-
     }
-
 }
