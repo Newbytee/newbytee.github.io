@@ -1,15 +1,25 @@
 var string1 = "bleup";
 var string2;
+var string2Reversed;
+var inputField = document.getElementById("inputField");
 
-function reverse(tmpString) {
+function reverse() {
+    
+    string2 = inputField.value;
+    string2Reversed = string2;
 
-    var tmpStringLength = tmpString.length;
+    var tmpStringLength = string2.length;
+    var j;
 
-    for (var i = tmpStringLength - 1; i >= 0; i--) {
+    for (var i = 0; i < tmpStringLength; i++) {
 
-        alert(i);
+        j = (tmpStringLength - i - 1);
+
+        alert(string2[j]);
+        string2Reversed[i] = string2[j];
 
     }
-
+    
+    alert(string2Reversed);
     
 }
