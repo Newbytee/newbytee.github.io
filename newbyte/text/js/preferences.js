@@ -1,1 +1,1 @@
-let contentPath = "txt";
+let contentPath = "story1";
