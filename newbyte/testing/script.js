@@ -1,3 +1,6 @@
+var foo = `j"i" ' 'o`;
+
+
 var currentLocation;
 var array = [];
 
