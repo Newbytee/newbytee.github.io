@@ -24,7 +24,6 @@ document.getElementById("toggleButton").addEventListener("click", function() {
         switch (vibrationType) {
             case 0:
                 intervalVar = setInterval(function() {
-                    //window.navigator.vibrate([200, 100, 200]);
                     window.navigator.vibrate(500);
                 }, 500);
                 console.log("type 0");
@@ -60,5 +59,3 @@ document.getElementById("toggleButton").addEventListener("click", function() {
         vibrate = true;
     }
 });
-
-//alert("test 3");
