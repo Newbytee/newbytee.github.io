@@ -15,3 +15,5 @@ document.getElementById("toggleButton").addEventListener("click", function() {
         vibrate = true;
     }
 });
+
+alert("test");
