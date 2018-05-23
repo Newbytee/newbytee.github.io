@@ -1,0 +1,8 @@
+{
+  "name": "Meep",
+  "short_name": "Meep",
+  "display": "standalone",
+  "background_color": "#490A3D",
+  "theme_color": "2C5364",
+  "start_url": "/newbyte/api-test/"
+}
