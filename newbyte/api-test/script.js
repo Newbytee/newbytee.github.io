@@ -1,15 +1,14 @@
 "use strict";
 
-const switchButton = document.getElementById("toggleButton");
 let vibrate = false;
 let intervalVar;
 
-switchButton.addEventListener("click", function() {
+document.getElementById("toggleButton").addEventListener("click", function() {
     if (vibrate) {
         intervalVar = setInterval(function() {
-            window.navigator.vibrate(10);
+            window.navigator.vibrate(100);
             console.log("done");
-        }, 10);
+        }, 100);
         vibrate = false;
     } else {
         clearInterval(intervalVar);
