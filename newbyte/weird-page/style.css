@@ -1,0 +1,24 @@
+h1 {
+    margin-top: 40vh;
+    text-align: center;
+    font-weight: lighter;
+    transition: 1.5s;
+}
+
+h1:hover {
+    font-size: smaller;
+    color: #FFFFFF;
+    transition: 1.5s;
+}
+
+h1:hover:after {
+    content: " i'm shy ok?";
+    font-size: small;
+    transition: 0.5s;
+}
+
+#textInput {
+    height: 10vh;
+    width: 60%;
+    border-bottom-color: #0F2027;
+}
