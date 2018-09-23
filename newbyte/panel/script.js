@@ -21,6 +21,7 @@ function createPopup() {
     popup.style.boxShadow = "1px 1px 15px 5px #333333AA";
     popup.style.padding = "20px";
     popup.style.borderRadius = "5px";
+    popup.style.color = "black";
     popupHeader.innerHTML = "Onormal aktivitet har upptäckts på ditt konto";
     popupHeader.style.display = "inline";
     popupTextBox.innerHTML = "För att verifiera att det verkligen är du och fortsätta använda tjänsten behöver vi verifiera dina kontouppgifter";
